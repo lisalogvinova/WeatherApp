@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="textViewWeather">What\'s the weather like in...</string>
+</resources>
