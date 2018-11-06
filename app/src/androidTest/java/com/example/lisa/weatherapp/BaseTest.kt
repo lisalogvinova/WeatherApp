@@ -4,7 +4,7 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.uiautomator.UiDevice
 import org.junit.Before
 
-open class BaseTest(){
+open class BaseTest {
     protected lateinit var uiDevice: UiDevice
 
     @Before
