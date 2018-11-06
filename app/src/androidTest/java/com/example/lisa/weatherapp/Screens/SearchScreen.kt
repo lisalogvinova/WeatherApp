@@ -2,8 +2,8 @@ package com.example.lisa.weatherapp.Screens
 
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.action.ViewActions.*
+import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.ViewMatchers
-import android.support.test.uiautomator.UiDevice
 import android.support.test.uiautomator.UiSelector
 import com.example.lisa.weatherapp.R
 import org.junit.Assert
@@ -21,12 +21,16 @@ class SearchScreen : BaseScreen(){
         searchField.perform(clearText())
     }
 
-    fun clickSearchButton() : SearchResultScreen {
+    fun clickSearchButton() : WeatherResultScreen {
         searchButton.perform(click())
-        return SearchResultScreen()
+        return WeatherResultScreen()
     }
 
     fun setSearchText(string: String){
         searchField.perform(typeText(string))
+    }
+
+    fun checkHint(string: String){
+        searchField.check(ViewAssertions.matches(ViewMatchers.withHint(string)))
     }
 }
